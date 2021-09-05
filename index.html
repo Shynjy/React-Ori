@@ -16,8 +16,40 @@
   <div id="app"></div>
 
   <script type="text/babel">
+    const Compras = () => {
+      const [count, setCount] = React.useState(0);
+
+      function comprar() {
+        setCount(count + 1);
+      }
+
+      return (
+        <div>
+          <button onClick={comprar}>Comprar</button>
+          <p>Qd. Total: {count}</p>
+          <p>Valors total dos Produtos: R$ {count * 250}</p>
+        </div>
+      )
+    }
+
+
+    // const Button = () => {
+    //   function handleCLick(e) {
+    //     console.log(e.target.innerText);
+    //   }
+
+    //   return <button onClick={handleCLick} >Comprar</button>
+    // }
+
+    const Titulo = () => {
+      return <h1>Meu Título</h1>
+    }
+
     function App() {
-      return <div>Meu app!</div>
+      return <div>Meu app!
+        <Titulo />
+        <Compras />
+      </div>
     }
 
     ReactDOM.render(<App />, document.getElementById('app'))
