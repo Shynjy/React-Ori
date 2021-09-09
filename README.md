@@ -31,3 +31,7 @@ Configuração do packagejson:
 `npm install @babel/core @babel/preset-react babel-loader --save-dev`
 Loader css:
 `npm install style-loader css-loader --save-dev`
+
+### Criando através do create-react-app
+
+`npx create-react-app nomedaaplicacao`
