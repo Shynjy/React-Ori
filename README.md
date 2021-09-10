@@ -35,3 +35,7 @@ Loader css:
 ### Criando através do create-react-app
 
 `npx create-react-app nomedaaplicacao`
+
+### Eventos do React
+
+https://reactjs.org/docs/events.html
