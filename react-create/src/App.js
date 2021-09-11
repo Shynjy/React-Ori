@@ -59,10 +59,24 @@ const App = () => {
     },
   ];
 
-  function cor(produto) {}
+  function Title(props) {
+    return <h1>{props.texto}</h1>;
+  }
+
+  function Input({ label, id, ...props }) {
+    return (
+      <div>
+        <label htmlFor={id}>{label}</label>
+        <input id={id} type="text" placeholder={label} {...props} />
+      </div>
+    );
+  }
 
   return (
     <>
+      <Title texto="Que Título meu Irmão" />
+      <Input id="nome" label="Nome" />
+      <Input id="password" label="password" type="password" />
       <p>Exercício 1</p>
       <button onClick={trocaUser}>Troca cliente</button>
       <p>Nome: {dados.cliente}</p>
