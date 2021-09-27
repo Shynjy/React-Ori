@@ -14,12 +14,23 @@ function App() {
     // console.log(event.target.innerText);
     const prod = event.target.innerText;
 
+    window.localStorage.setItem('produto', `${prod}`);
+
     const response = await fetch(api + prod);
 
     const json = await response.json();
     setDados(json);
     setCarregando(false);
   }
+
+  React.useEffect(() => {
+    const produto = window.localStorage.getItem('produto');
+    if (produto !== null) {
+      fetch(api + produto)
+        .then((data) => data.json())
+        .then((json) => setDados(json));
+    }
+  }, []);
 
   return (
     <div>
