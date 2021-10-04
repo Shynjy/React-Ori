@@ -1,10 +1,16 @@
 import React from 'react';
+import Input from './Form/Input';
+import Select from './Form/Select';
 
 function App() {
   const [form, setForm] = React.useState({
     nome: '',
     email: '',
   });
+
+  const [nome, setNome] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [produto, setProduto] = React.useState('');
 
   const colors = ['amarelo', 'azul', 'verde', 'vermelho', 'roxo'];
 
@@ -110,7 +116,7 @@ function App() {
         <h3>Cores selecionadas:</h3>
         {colors.map((item, i) => {
           return (
-            <label key={i}>
+            <label key={i} style={{ textTransform: 'capitalize' }}>
               <input
                 type="checkbox"
                 value={item}
@@ -121,6 +127,25 @@ function App() {
             </label>
           );
         })}
+      </form>
+      <h3>Componentes:</h3>
+      <form>
+        <Input id="nome2" label="Nome" value={nome} setValue={setNome} />
+        <Input
+          id="email"
+          label="Email"
+          value={email}
+          setValue={setEmail}
+          required
+        />
+        <p>
+          <Select
+            options={['Smartphone', 'Notebook', 'Tablet']}
+            value={produto}
+            setValue={setProduto}
+          />
+        </p>
+        <button>Enviar</button>
       </form>
     </>
   );
